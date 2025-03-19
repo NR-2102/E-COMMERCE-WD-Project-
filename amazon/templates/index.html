@@ -8,10 +8,41 @@
     <link rel="icon" href="assets/icon.png" style="border-radius: 100%;">
     <link rel="stylesheet" href="../static/style.css">
     <link rel="stylesheet" href="../static/responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
+<style>
+    .marquee-container {
+        border: 2px solid black;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        background-color: lightgray; 
+        background-color: #222f3d;
+        /* margin-top: 20px; */
+    }
+
+    .marquee-content {
+        display: inline-block;
+        white-space: nowrap;
+        animation: marquee 40s linear infinite; 
+    }
+
+    .marquee-content img {
+        padding-top: 3px;
+        height: 300px;
+        display: inline-block;
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0%);
+        }
+        to {
+            transform: translateX(-50%); 
+        }
+    }
+</style>
 
 <body>
     <header>
@@ -23,7 +54,7 @@
                 </div>
             </div>
             
-           
+            
             <div class="nav-address border">
                 <p class="add-first">Deliver to</p>
                 <div class="add-icon">
@@ -42,13 +73,13 @@
                 </div>
             </div>
             <div class="region border">
-                <img src="assets/flag2.png" alt="">
+                <img src="/templates/assets/flag2.png" alt="Error..">
                 <p>EN</p>
                 <i class="fa-solid fa-angle-down"></i>
 
             </div>
             <div class="nav-signin border">
-                <p><a href="./login.html">Hello, sign in</a></p>
+                <p><a href="http://127.0.0.1:5501/templates/login.html" target="_blank">Hello, sign in</a></p>
                 <p class="nav-sec">Account & List <i class="fa-solid fa-angle-down"></i></p>
 
             </div>
@@ -80,6 +111,22 @@
             </div>
         </div>
     </header>
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <img src="/templates/assets/Banner-1.webp" alt="Error..">
+            <img src="/templates/assets/Banner-2.jpg" alt="Error..">
+            <img src="/templates/assets/Banner-3.jpg" alt="Error..">
+            <img src="/templates/assets/Banner-4.jpg" alt="Error..">
+            <img src="/templates/assets/Banner-5.jpg" alt="Error..">
+
+            <!-- Duplicate images to create a seamless loop -->
+            <img src="/templates/assets/Banner-1.webp" alt="Error..">
+            <img src="/templates/assets/Banner-2.jpg" alt="Error..">
+            <img src="/templates/assets/Banner-3.jpg" alt="Error..">
+            <img src="/templates/assets/Banner-4.jpg" alt="Error..">
+            <img src="/templates/assets/Banner-5.jpg" alt="Error..">
+        </div>
+    </div>
     <div class="hero-section">
         <div class="hero-msg">
             <p>You are on amazon.com You can also shop on Amazon India for millions of products with fast local
@@ -90,7 +137,7 @@
         <div class="box1 box">
             <div class="box-content">
                 <h2>Clothes</h2>
-                <div class="box-img" style="background-image: url('assets/box1_image.jpg');"></div>
+                <div class="box-img" style="background-image: url('/templates/assets/box1_image.jpg');"></div>
                 <p>See More</p>
             </div>
 
@@ -98,28 +145,29 @@
         <div class="box2 box">
             <div class="box-content">
                 <h2>Health & Personal Care</h2>
-                <div class="box-img" style="background-image: url('assets/box2_image.jpg');"></div>
+                <div class="box-img" style="background-image: url('/templates/assets/box2_image.jpg');"></div>
+                <!-- <div class="box-img" style="background-image: url('/static/assets/box2_image.jpg');"></div> -->
                 <p>See More</p>
             </div>
         </div>
         <div class="box3 box">
             <div class="box-content">
                 <h2>Furniture</h2>
-                <div class="box-img" style="background-image: url('assets/box3_image.jpg');"></div>
+                <div class="box-img" style="background-image: url('/templates/assets/box3_image.jpg');"></div>
                 <p>See More</p>
             </div>
         </div>
         <div class="box4 box">
             <div class="box-content">
                 <h2>Mobile and Accessories</h2>
-                <div class="box-img" style="background-image: url('assets/box4_image.jpg');"></div>
+                <div class="box-img" style="background-image: url('/templates/assets/box4_image.jpg');"></div>
                 <p>See More</p>
             </div>
         </div>
         <div class="box1 box">
             <div class="box-content">
                 <h2>Makeup Kit</h2>
-                <div class="box-img" style="background-image: url('assets/box5_image.jpg');"></div>
+                <div class="box-img" style="background-image: url('/templates/assets/box5_image.jpg');"></div>
                 <p>See More</p>
             </div>
 
@@ -127,21 +175,21 @@
         <div class="box2 box">
             <div class="box-content">
                 <h2>Pet Food & More</h2>
-                <div class="box-img" style="background-image: url('assets/box6_image.jpg');"></div>
+                <div class="box-img" style="background-image: url('/templates/assets/box6_image.jpg');"></div>
                 <p>See More</p>
             </div>
         </div>
         <div class="box3 box">
             <div class="box-content">
                 <h2>Toys & More</h2>
-                <div class="box-img" style="background-image: url('assets/box7_image.jpg');"></div>
+                <div class="box-img" style="background-image: url('/templates/assets/box7_image.jpg');"></div>
                 <p>See More</p>
             </div>
         </div>
         <div class="box4 box">
             <div class="box-content">
                 <h2>Fashion & More</h2>
-                <div class="box-img" style="background-image: url('assets/box8_image.jpg');"></div>
+                <div class="box-img" style="background-image: url('/templates/assets/box8_image.jpg');"></div>
                 <p>See More</p>
             </div>
         </div>
@@ -155,13 +203,23 @@
     <section>
         <div class="personlized">
             <p>See personalized recommendations</p>
-            <div class="golden_button">Sign in</div>
-            <p> New Customer? <a href="">Start Here.</a></p>
+            <div class="golden_button">
+                <button>
+                    <a href="http://127.0.0.1:5501/templates/login.html" target="_blank">
+                        Sign in
+                    </a>
+                </button>
+            </div>
+            <p> New Customer? <a href="http://127.0.0.1:5501/templates/signup.html#" target="_blank">Start Here.</a></p>
         </div>
     </section>
     <footer>
         <div class="foot-panel1">
-            Back to top
+            <a href="http://127.0.0.1:5000/">
+                <button>
+                    Back to top
+                </button>
+            </a>
         </div>
         <div class="foot-panel2">
             <ul>
@@ -217,7 +275,7 @@
                     <p>USD-.U.S. Dollar</p>
                 </div>
                 <div class="country">
-                    <img src="assets/flag2.png" alt="">
+                    <img src="/templates/assets/flag2.png" alt="Error..">
                     
                     <p><i class="fa-solid fa-angle-down"></i>United States</p>
                 </div>

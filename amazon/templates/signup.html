@@ -131,10 +131,62 @@
             font-size: 14px;
             margin-bottom: 10px;
         }
+
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .logo-container {
+            /* border: 2px solid red; */
+            position: relative;
+            font-family: Arial, sans-serif;
+            font-size: 50px;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 20px;
+        }
+        
+        /* The Amazon Smile */
+        .smile {
+            /* border: 2px solid red; */
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            border: solid 5px orange;
+            border-color: transparent transparent orange transparent;
+            border-radius: 50%;
+            bottom: -3.89px;
+            left: 43px;
+            transform: rotate(1deg);
+        }
+
+        
+        
+        /* The Arrow (Triangle) */
+        .arrow {
+            /* border: 2px solid red; */
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid orange;
+            bottom: -2.6px;
+            left: 130px;
+            transform: rotate(-14deg);
+        }
     </style>
 </head>
 <body>
-    <div class="logo">AMAZON</div>
+    <div class="logo-container">
+        amazon
+        <div class="smile"></div>
+        <div class="arrow"></div>
+    </div>
     <div class="container">
         <h1>Create account</h1>
 
@@ -147,35 +199,61 @@
             {% endif %}
         {% endwith %} -->
 
-        <form action="/register" method="POST">
+        <form id="registerForm" action="/register" method="POST">
             <div class="form-group">
                 <label for="name">Your name</label>
                 <input type="text" id="name" name="name" required>
             </div>
-            
+        
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
             </div>
-            
+        
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="At least 6 characters" required>
             </div>
-            
+        
             <div class="form-group">
                 <label for="password-check">Re-enter password</label>
                 <input type="password" id="password-check" name="password-check" required>
             </div>
-            
+        
             <button type="submit" class="submit-btn">Create your Amazon account</button>
         </form>
         
         <div class="divider">Already have an account?</div>
         
         <div class="signin-link">
-            <a href="#">Sign in</a>
+            <a href="http://127.0.0.1:5501/templates/login.html" target="_blank">Sign in</a>
         </div>
     </div>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let passwordCheck = document.getElementById("password-check").value;
+    
+            // Password validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long!");
+                return;
+            }
+    
+            if (password !== passwordCheck) {
+                alert("Passwords do not match!");
+                return;
+            }
+    
+            // Simulate form submission and redirect
+            alert("Account created successfully!");
+            window.location.href = "index.html"; // Redirect to home page
+        });
+    </script>
 </body>
 </html>

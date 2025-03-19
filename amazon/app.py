@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 import os
 
@@ -31,7 +31,7 @@ with app.app_context():
 # Route to render the signup form
 @app.route('/')
 def signup():
-    return render_template('signup.html')
+    return render_template('index.html')
 
 # Route to handle form submission
 @app.route('/register', methods=['POST'])
@@ -63,6 +63,10 @@ def register():
 
     flash("Account created successfully!", "success")
     return redirect(url_for('signup'))  # Redirect to signup page after registration
+
+@app.route('/templates/assets/<path:filename>')
+def serve_templates_assets(filename):
+    return send_from_directory('templates/assets', filename)
 
 # Run the app
 if __name__ == '__main__':

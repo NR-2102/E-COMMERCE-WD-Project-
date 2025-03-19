@@ -343,7 +343,7 @@
   }
 
   .logo1 {
-    background-image: url(/assets/amazon_logo.png);
+    background-image: url('/assets/amazon_logo.png');
     height: 90px;
   }
 

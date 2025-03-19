@@ -13,6 +13,7 @@
     max-width: 100%;
     align-items: center;
     justify-content: space-evenly;
+    
 }
 .flex{
     display: flex;
@@ -64,26 +65,26 @@
 ::placeholder{
     margin-left: 5px;
 }
-.nav-search:hover{
-    border: 2px solid orange;
-}
 .search-select{
+    /* border: 2px solid red; */
     background-color: #f3f3f3;
-    width: 40px;
+    width: 60px;
     text-align: center;
     border-top-left-radius:4px ;
     border-bottom-left-radius:4px ;
     border: none;
-  
+    
 }
 .search-input{
+    /* border: 2px solid red; */
     padding-left: 10px;
     width: 100%;
     border: none;
     font-size: 1rem;
 }
 .search-icon{
-    width: 45px;
+    /* border: 2px solid red; */
+    width: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,6 +130,18 @@ span{
     align-items: center;
     justify-content: space-evenly;
 }
+
+p a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+p span{
+    font-size: 14px;
+
+}
+
 .panel-ops p{
     display: inline;
     margin: 10px;
@@ -144,21 +157,26 @@ span{
 
                   /* Hero-Section */
 .hero-section{
-    background-image: url(assets/background.jpg);
-    height: 380px;
+    /* border: 2px solid red; */
+    background-image: url('assets/background.jpg');
+    height: 80px;
     position: relative;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .hero-msg{
+    /* border: 2px solid red; */
     background-color: white;
-    height: 40px;
+    /* height: 40px; */
     color: black;
-    font-size: 0.85rem;
+    font-size: 15px;
     display: flex;
     align-items: center;
     position: absolute;
     justify-content: center;
-    bottom :8% ;
+    /* bottom :8% ; */
     width: 100%;
 
 }
@@ -168,10 +186,12 @@ span{
             /* Shopping Section */
 
 .shop-section{
+    /* border: 2px solid red; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     background-color: #e2e7e6;
+    padding-bottom: 15px;
 
 }            
  .box{
@@ -221,7 +241,7 @@ width: 280px;
 }
 
 .personlized{
-    margin-top: 200px;
+    margin-top: 40px;
     height: 150px;
     padding-top: 30px;
     padding-inline: 20px;
@@ -239,7 +259,7 @@ width: 280px;
     text-decoration: none;
     color: #007185;
 }
-.golden_button{
+.golden_button button{
     margin-block: 5px;
     width: 235px;
     padding: 5px 10px;
@@ -249,12 +269,24 @@ width: 280px;
     border-radius: 5px;
     font-size: 0.9rem;
     font-weight: 600;
-
+    /* transition: 0.9s; */
+    border-radius: 60px;
 }
+
+.golden_button button:hover{
+    cursor: pointer;
+    background-color:#ffc800 ;
+}
+
+.golden_button button a{
+    color: black;
+}
+
 footer{
     margin-top: 40px;
 }
-.foot-panel1{
+.foot-panel1 button{
+    border: none;
     background-color: #37475a;
     color: white;
     height: 50px;
@@ -262,7 +294,9 @@ footer{
     align-items: center;
     justify-content: center;
     font-size: 0.85rem;
+    width: 100vw;
 }
+
 .foot-panel2{
     display: flex;
     justify-content: space-evenly;
@@ -347,7 +381,7 @@ ul a{
 }
 
 .logo1{
-    background-image: url(/assets/amazon_logo.png);
+    background-image: url('/assets/amazon_logo.png');
     height: 50px;
     background-size: cover;
     width: 100px;
@@ -375,3 +409,7 @@ ul a{
     font-size :0.7rem ;
     text-align: center;
 }
+
+/* .create-account-btn, button{
+    border: 2px solid red;
+} */
