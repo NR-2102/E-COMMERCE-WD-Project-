@@ -150,7 +150,7 @@
             margin-bottom: 20px;
         }
         
-        /* The Amazon Smile */
+       
         .smile {
             /* border: 2px solid red; */
             position: absolute;
@@ -166,7 +166,7 @@
 
         
         
-        /* The Arrow (Triangle) */
+        
         .arrow {
             /* border: 2px solid red; */
             position: absolute;
@@ -190,16 +190,7 @@
     <div class="container">
         <h1>Create account</h1>
 
-        <!-- Flash Messages -->
-        <!-- {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="flash-messages {{ category }}">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %} -->
-
-        <form id="registerForm" action="/register" method="POST">
+        <form id="registerForm" action="{{ url_for('register') }}" method="POST">
             <div class="form-group">
                 <label for="name">Your name</label>
                 <input type="text" id="name" name="name" required>
@@ -216,44 +207,21 @@
             </div>
         
             <div class="form-group">
-                <label for="password-check">Re-enter password</label>
+                <label for="password_check">Re-enter password</label>
                 <input type="password" id="password-check" name="password-check" required>
             </div>
         
             <button type="submit" class="submit-btn">Create your Amazon account</button>
         </form>
         
+        
         <div class="divider">Already have an account?</div>
         
         <div class="signin-link">
-            <a href="http://127.0.0.1:5501/templates/login.html" target="_blank">Sign in</a>
+            <a href="{{ url_for('login') }}" target="_blank">Sign in</a>
         </div>
     </div>
 
-    <script>
-        document.getElementById("registerForm").addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent default form submission
     
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
-            let passwordCheck = document.getElementById("password-check").value;
-    
-            // Password validation
-            if (password.length < 6) {
-                alert("Password must be at least 6 characters long!");
-                return;
-            }
-    
-            if (password !== passwordCheck) {
-                alert("Passwords do not match!");
-                return;
-            }
-    
-            // Simulate form submission and redirect
-            alert("Account created successfully!");
-            window.location.href = "index.html"; // Redirect to home page
-        });
-    </script>
 </body>
 </html>

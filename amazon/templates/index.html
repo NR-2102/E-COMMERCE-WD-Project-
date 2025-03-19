@@ -79,10 +79,15 @@
 
             </div>
             <div class="nav-signin border">
-                <p><a href="http://127.0.0.1:5501/templates/login.html" target="_blank">Hello, sign in</a></p>
-                <p class="nav-sec">Account & List <i class="fa-solid fa-angle-down"></i></p>
-
+                {% if user %}
+                    <p>Hello, {{ user.name }}</p>
+                    <p class="nav-sec"><a href="{{ url_for('logout') }}">Sign Out</a></p>
+                {% else %}
+                    <p><a href="{{ url_for('login') }}">Hello, Sign in</a></p>
+                    <p class="nav-sec">Account & List <i class="fa-solid fa-angle-down"></i></p>
+                {% endif %}
             </div>
+            
             <div class="nav-return border">
                 <p><span>Returns </span></p>
                 <p class="nav-sec"> & Orders</p>
@@ -200,19 +205,21 @@
 
     </div>
 
-    <section>
-        <div class="personlized">
-            <p>See personalized recommendations</p>
-            <div class="golden_button">
-                <button>
-                    <a href="http://127.0.0.1:5501/templates/login.html" target="_blank">
-                        Sign in
-                    </a>
-                </button>
-            </div>
-            <p> New Customer? <a href="http://127.0.0.1:5501/templates/signup.html#" target="_blank">Start Here.</a></p>
+    {% if not user %}
+<section>
+    <div class="personlized">
+        <p>See personalized recommendations</p>
+        <div class="golden_button">
+            <button>
+                <a href="{{ url_for('login') }}" target="_blank">
+                    Sign in
+                </a>
+            </button>
         </div>
-    </section>
+        <p> New Customer? <a href="{{ url_for('signup') }}" target="_blank">Start Here.</a></p>
+    </div>
+</section>
+{% endif %}
     <footer>
         <div class="foot-panel1">
             <a href="http://127.0.0.1:5000/">

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In - Amazon Clone</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <style>
 
         * {
@@ -171,7 +170,7 @@
         }
 
         .logo-container {
-            /* border: 2px solid red; */
+            
             position: relative;
             font-family: Arial, sans-serif;
             font-size: 50px;
@@ -180,9 +179,9 @@
             margin-bottom: 20px;
         }
         
-        /* The Amazon Smile */
+        
         .smile {
-            /* border: 2px solid red; */
+           
             position: absolute;
             width: 100px;
             height: 30px;
@@ -196,9 +195,9 @@
 
         
         
-        /* The Arrow (Triangle) */
+        
         .arrow {
-            /* border: 2px solid red; */
+            
             position: absolute;
             width: 0;
             height: 0;
@@ -208,6 +207,15 @@
             bottom: -2.6px;
             left: 130px;
             transform: rotate(-14deg);
+        }
+        .flash {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            text-align: center;
         }
     </style>
 </head>
@@ -219,19 +227,26 @@
     </div>
     <div class="container">
         <h1>Sign in</h1>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash">
+                    {{ messages[0] }}
                 </div>
-            
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-            
-                <button type="submit" class="submit-btn">Sign in</button>
-            </form>
+            {% endif %}
+        {% endwith %}
+
+        <form action="{{ url_for('login') }}" method="POST">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
 
             <div class="remember-me">
                 <input type="checkbox" id="remember" name="remember">
@@ -247,29 +262,8 @@
         
         <div class="create-account-btn">
             <button>
-                <a href="http://127.0.0.1:5501/templates/signup.html#" target="_blank">
+                <a href="{{ url_for('signup') }}" target="_blank">
                     Create your Amazon account
                 </a>
             </button>
         </div>
-    </div>
-
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevents the default form submission
-    
-            // Get user input values
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
-    
-            // Check if both fields are filled (you can add validation)
-            if (email && password) {
-                // Redirect to home page (Change 'home.html' to your actual home page)
-                window.location.href = "index.html";
-            } else {
-                alert("Please fill in both fields before signing in!");
-            }
-        });
-    </script>
-</body>
-</html>
