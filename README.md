@@ -1,1 +1,1 @@
-# E-COMMERCE WD_Project
+# E-COMMERCE Web Development Project
