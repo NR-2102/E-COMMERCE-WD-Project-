@@ -1,25 +1,65 @@
-## Flask E-commerce Application
+# Flask E-commerce Application
 
-🐍Python Project🐍
+Overview
 
-📌Customers can sign in or sign up
-📌Customers can reset their passwords
-📌Customers can search for goods
-📌Add them to their cart
-📌Payment Gateway Functionality
-📌Admins can regulate shop products e.g stock level
-📌Admins can change order status
+This project is an e-commerce website inspired by Amazon, built using HTML, CSS, JavaScript, Flask, and SQLite. The site allows users to browse and purchase various products online.
+
+Features
+
+User Authentication: Login and signup functionality.
+
+Product Categories: Different sections for clothing, health products, furniture, electronics, and more.
+
+Search Functionality: Users can search for products.
+
+Shopping Cart: Users can add and remove items from their cart.
+
+Order Management: View order history and track purchases.
+
+Responsive Design: Fully optimized for mobile and desktop devices.
+
+Technologies Used
+
+Frontend: HTML, CSS, JavaScript, Bootstrap
+
+Backend: Flask (Python)
+
+Database: SQLite
+
+Icons & Fonts: FontAwesome
+
+Setup Instructions
+
+Prerequisites
+
+Python 3.x installed
+
+Flask framework installed
+
+Installation Steps
+
+Clone this repository:
+
+Navigate to the project directory:
+
+Install dependencies:
+
+Run the Flask server:
+
+Open a browser and visit:
+
+Folder Structure
+
+Future Enhancements
+
+Implement payment gateway integration.
+
+Add a recommendation system based on user behavior.
+
+Include an admin dashboard for product and order management.
 
 
-OVERVIEW
 
-This Docker image packages a Flask-based e-commerce application, optimized for production use with Gunicorn. The lightweight python:3.8-slim base image ensures efficient and quick deployment.
-
-FEATURES
-
-Flask Framework: Robust and scalable web application built with Flask.
-Gunicorn Server: High-performance WSGI server for running Python web applications.
-Efficient: Slim Python base image minimizes overhead.
 
 
 
