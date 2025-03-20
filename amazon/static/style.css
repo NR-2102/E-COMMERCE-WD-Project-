@@ -158,6 +158,7 @@ p span{
                   /* Hero-Section */
 .hero-section{
     /* border: 2px solid red; */
+    background-color: white;
     background-image: url('assets/background.jpg');
     height: 80px;
     position: relative;
