@@ -6,12 +6,13 @@ app = Flask(__name__)
 
 app.secret_key = "your_secret_key"
 
-# Configure SQLite database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite' #Simplified database path.
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite' 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+# Create a table in database
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
@@ -21,10 +22,12 @@ class User(db.Model):
 with app.app_context():
     db.create_all()
 
+# To route sign up page
 @app.route('/signup')
 def signup():
     return render_template('signup.html')
 
+# To route home page
 @app.route('/')
 def home():
     if 'user_id' in session:
@@ -32,7 +35,8 @@ def home():
         return render_template('index.html', user=user)
     else:
         return render_template('index.html')
-
+    
+# to handle the sign up form submission
 @app.route('/register', methods=['POST'])
 def register():
     name = request.form['name']
@@ -61,6 +65,7 @@ def register():
     flash("Account created successfully!", "success")
     return redirect(url_for('login'))
 
+# handle the login form submission
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
