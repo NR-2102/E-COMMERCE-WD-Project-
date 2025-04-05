@@ -208,19 +208,40 @@
         margin: 0px 0px 12px 0px;
     }
 
-    button{
+    /* button{
         border: 2px solid gold;
         background-color: gold;
         width: 40px;
         height: 20px;
         border-radius: 10px;
         font-size: 15px;
-        /* padding: 10px; */
-    }
+    } */
 
     .golden_button button{
         border: none;
         height: 30px;
+    }
+
+    .panel{
+        border: none;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px 25px;
+    }
+
+    button{
+        border: none;
+        background-color: #FFC800;
+        text-align: center;
+        width: 45px;
+        height: 30px;
+        border-radius: 5px;
+    }
+
+    button:hover{
+        cursor: pointer;
     }
 </style>
 
@@ -246,8 +267,33 @@
             <div class="nav-search">
                 <select class="search-select">
                     <option>All</option>
+                    <option>Alexa Skills</option>  
+                    <option>Amazon Devices</option>  
+                    <option>Amazon Fashion</option>  
+                    <option>Amazon Fresh</option>  
+                    <option>Amazon Pharmacy</option>  
+                    <option>Appliances</option>  
+                    <option>Apps & Games</option>  
+                    <option>Audible Audiobooks</option>  
+                    <option>Baby</option>  
+                    <option>Beauty</option>  
+                    <option>Books</option>  
+                    <option>Car & Motorbike</option>  
+                    <option>Clothing & Accessories</option>  
+                    <option>Collectibles</option>  
+                    <option>Computers & Accessories</option>  
+                    <option>Deals</option>  
+                    <option>Electronics</option>  
+                    <option>Furniture</option>  
+                    <option>Garden & Outdoors</option>  
+                    <option>Gift Cards</option>  
+                    <option>Grocery & Gourmet Foods</option>  
+                    <option>Health & Personal Care</option>  
+                    <option>Home & Kitchen</option>  
+                    <option>Industrial & Scientific</option>  
+                    <option>Jewellery</option>                    
                 </select>
-                <input type="text" placeholder="Search Amazon" class="search-input">
+                <input type="text" placeholder="Search Amazon.in" class="search-input">
                 <div class="search-icon">
                     <i class="fa-solid  fa-magnifying-glass"></i>
                 </div>
@@ -284,13 +330,13 @@
                 <i class="fa-solid fa-bars"></i>
                 All
             </div>
-            <div class="panel-ops">
+            <!-- <div class="panel-ops">
                 <p class="border">Today's Deals</p>
                 <p class="border">Customer Service</p>
                 <p class="border">Registry</p>
                 <p class="border"> Gift Cards</p>
                 <p class="border">Sell</p>
-            </div>
+            </div> -->
             <div class="panel-deals border">
                 Shop deals in Electronics
             </div>
